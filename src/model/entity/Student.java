@@ -57,14 +57,47 @@ public class Student implements AvarengMediasService{
 		this.noteThree = noteThree;
 	}
 	
+	
 	@Override
-	public double calc(double noteOne, double noteTwo, double noteThree) {
+	public double calcMedia(double noteOne, double noteTwo, double noteThree) {
 		double calcMedia = ((noteOne + noteTwo + noteThree) / 3);
 		return calcMedia;
 	}
 	
+	@Override
+	public double largerNote(double noteOne, double noteTwo, double noteThree) {
+
+		 if(noteOne >= noteTwo) {
+			 if(noteOne >= noteThree) {
+				 return noteOne;
+			}else {
+				if(noteTwo >= noteThree) {
+					return noteTwo;
+				}
+			}
+		 }
+		return noteThree;
+	}
+	@Override
+	public double smallNote(double noteOne, double noteTwo, double noteThree) {
+		 
+		if(noteOne >= noteTwo){
+            if(noteOne >= noteThree)
+                return noteOne;
+        }else{
+            if(noteTwo >= noteThree)
+                return noteTwo;
+        }
+        return noteThree;
+            
+    }
+	
+	
 	public String toString() {
 		
-		return "Arithimetic Media = " + calc(noteOne, noteTwo, noteThree);
+		return "\n" + "Small Note = " + smallNote(noteOne, noteOne, noteOne) +
+			   "\n" + "Larger Note = " + largerNote(noteOne, noteOne, noteOne) +
+			   "\n" + "Arithimetic Media = " + calcMedia(noteOne, noteTwo, noteThree) + "\n";
 	}
+	
 }
