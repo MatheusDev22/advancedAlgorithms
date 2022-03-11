@@ -60,7 +60,7 @@ public class Student implements AvarengMediasService{
 	
 	@Override
 	public double calcMedia(double noteOne, double noteTwo, double noteThree) {
-		double calcMedia = ((noteOne + noteTwo + noteThree) / 3);
+		double calcMedia = ( noteOne + noteTwo + noteThree) / 3;
 		return calcMedia;
 	}
 	
@@ -70,43 +70,25 @@ public class Student implements AvarengMediasService{
 	@Override
 	public double largerNote( double noteOne, double noteTwo, double noteThree) {
 		
-		double nota[] = new double[] {getNoteOne(), getNoteTwo(), getNoteTwo()};
-		double maior = nota[0];
-		
-		for (int i = 0; i < nota.length; i++) {
-			
-			if(nota[i] > maior) {
-				maior += nota[i];
-			}
-		}
-		return maior;
-	}
-		 
-  
+		double larger = 0;
+		return larger = Math.max(getNoteOne(), Math.max(getNoteTwo(), getNoteThree() ));
+	} 
 	
 	@Override
 	public double smallNote(double noteOne, double noteTwo, double noteThree) {
 		 
-		double nota[] = new double[] {getNoteOne(), getNoteTwo(), getNoteTwo()};
-		double menor = nota[0];
- 
-		
-		for (int i = 0; i > nota.length; i++) {
-			
-			if(nota[i] < menor) {
-				menor += nota[i];
-			}
-		}
-		return menor;
-            
+		double small = 0;
+		return small = Math.min(getNoteOne(), Math.min(getNoteTwo(), getNoteThree() ));
     }
 	
 	
 	public String toString() {
 		
-		return "\n" + "Small Note = " + smallNote(getNoteOne(), getNoteTwo(), getNoteTwo() ) +
-			   "\n" + "Larger Note = " + largerNote(getNoteOne(), getNoteTwo(), getNoteTwo() ) +
-			   "\n" + "Arithimetic Media = " + calcMedia(noteOne, noteTwo, noteThree) + "\n";
+		return "Name: " + getName() + "\n" +
+				"Age: " + getAge() +
+				"\n" + "Small Note = " + smallNote(getNoteOne(), getNoteTwo(), getNoteTwo() ) +
+			    "\n" + "Larger Note = " + largerNote(getNoteOne(), getNoteTwo(), getNoteTwo() ) +
+			    "\n" + "Arithimetic Media = " + calcMedia( noteOne, noteTwo, noteThree);
 	}
 	
 }
