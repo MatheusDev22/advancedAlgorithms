@@ -1,6 +1,6 @@
 package model.services;
 
-public interface AvarengMediasService {
+public interface AvarengMediasService  {
 	
 	double calcMedia( double noteOne, double noteTwo, double noteThree);
 	

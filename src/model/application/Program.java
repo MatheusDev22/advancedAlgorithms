@@ -8,8 +8,6 @@ import java.util.Scanner;
 import model.entity.Student;
  
 
-
-
 public class Program {
 	
 	public static void main(String[] args) {
@@ -55,7 +53,7 @@ public class Program {
 		}while( op == 's' || op == 'S');
 		
 		System.out.println();
-		System.out.println(qtd + "º Aluno: ");
+		 
 		System.out.println (student);
 			
 		

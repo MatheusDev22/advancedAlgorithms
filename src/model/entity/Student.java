@@ -64,39 +64,48 @@ public class Student implements AvarengMediasService{
 		return calcMedia;
 	}
 	
+	
+	
+	 
 	@Override
-	public double largerNote(double noteOne, double noteTwo, double noteThree) {
-
-		 if(noteOne >= noteTwo) {
-			 if(noteOne >= noteThree) {
-				 return noteOne;
-			}else {
-				if(noteTwo >= noteThree) {
-					return noteTwo;
-				}
+	public double largerNote( double noteOne, double noteTwo, double noteThree) {
+		
+		double nota[] = new double[] {getNoteOne(), getNoteTwo(), getNoteTwo()};
+		double maior = nota[0];
+		
+		for (int i = 0; i < nota.length; i++) {
+			
+			if(nota[i] > maior) {
+				maior += nota[i];
 			}
-		 }
-		return noteThree;
+		}
+		return maior;
 	}
+		 
+  
+	
 	@Override
 	public double smallNote(double noteOne, double noteTwo, double noteThree) {
 		 
-		if(noteOne >= noteTwo){
-            if(noteOne >= noteThree)
-                return noteOne;
-        }else{
-            if(noteTwo >= noteThree)
-                return noteTwo;
-        }
-        return noteThree;
+		double nota[] = new double[] {getNoteOne(), getNoteTwo(), getNoteTwo()};
+		double menor = nota[0];
+ 
+		
+		for (int i = 0; i > nota.length; i++) {
+			
+			if(nota[i] < menor) {
+				menor += nota[i];
+			}
+		}
+		return menor;
             
     }
 	
 	
 	public String toString() {
 		
-		return "\n" + "Small Note = " + smallNote(noteOne, noteOne, noteOne) +
-			   "\n" + "Larger Note = " + largerNote(noteOne, noteOne, noteOne) +
+		return "\n" + "Small Note = " + smallNote(getNoteOne(), getNoteTwo(), getNoteTwo() ) +
+			   "\n" + "Larger Note = " + largerNote(getNoteOne(), getNoteTwo(), getNoteTwo() ) +
 			   "\n" + "Arithimetic Media = " + calcMedia(noteOne, noteTwo, noteThree) + "\n";
 	}
 	
